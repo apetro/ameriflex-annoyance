@@ -1,6 +1,5 @@
 ameriflex-annoyance
 ===================
-
 A simple AppleScript script for automating my seemingly endless number of documentation requests from AmeriFlex.
 
 Usage
