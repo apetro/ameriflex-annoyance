@@ -1,6 +1,11 @@
 ameriflex-annoyance
 ===================
-A simple AppleScript script for automating my seemingly endless number of documentation requests from AmeriFlex.
+A simple script for automating the sending of my email responses to
+AmeriFlex's seemingly endless requests for documentation.
+
+Platforms
+=========
+OS X
 
 Usage
 =====

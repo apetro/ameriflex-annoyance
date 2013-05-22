@@ -29,19 +29,23 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THESOFTWARE.*)
 
 -- start of mainline of script
-property windowTitle : "Create AmeriFlex Email"
+-- globals
+global windowTitle
+set windowTitle to "Send AmeriFlex Email"
 
+-- get user input
 set documentID to getDocumentID()
 set documentDate to getDocumentDate()
 set emailAttachment to getAttachment()
 
-# create, but don't send, email
-createEmail(documentID, documentDate, emailAttachment)
+-- create and send email
+set email to createEmail(documentID, documentDate, emailAttachment)
+sendEmail(email)
 -- end of mainline of script
 
 -- get the document ID from user input
 to getDocumentID()
-	getTextFromDialog("Please enter the document ID")
+	getTextFromDialog("Please enter the Document Tracking Number: ")
 end getDocumentID
 
 -- get the document date from user input
@@ -59,6 +63,22 @@ to getAttachment()
 	choose file with prompt "Please select the document to attach:"
 end getAttachment
 
+-- display provided message to user with only "OK" button
+to displayMessage(msg)
+	display dialog msg buttons {"OK"} default button 1 with title windowTitle
+end displayMessage
+
+-- displays message indicating if email was sent based on boolean provided
+to displayEmailSentMessage(bool)
+	if bool then
+		set msg to "Message Sent!"
+	else
+		set msg to "Oops, something went wrong. Message not sent."
+	end if
+	
+	displayMessage(msg)
+end displayEmailSentMessage
+
 -- creates and returns new email
 to createEmail(documentID, documentDate, emailAttachment)
 	set emailAddress to "claims@flex125.com"
@@ -72,7 +92,7 @@ end createEmail
 to emailFactory(emailAddress, emailSubject, emailContent, emailAttachment)
 	tell application "Mail"
 		# create the message
-		set email to make new outgoing message with properties {subject:emailSubject, content:emailContent, visible:true}
+		set email to make new outgoing message with properties {subject:emailSubject, content:emailContent}
 		
 		# set receipient
 		tell email
@@ -83,6 +103,17 @@ to emailFactory(emailAddress, emailSubject, emailContent, emailAttachment)
 	
 	email
 end emailFactory
+
+-- sends email and displays message to user.
+-- returns value of Mail's send method
+to sendEmail(email)
+	tell application "Mail"
+		set rtn to send email
+	end tell
+	
+	displayEmailSentMessage(rtn)
+	rtn
+end sendEmail
 
 -- generate the full content for the email
 to createEmailContent(documentID, documentDate)
