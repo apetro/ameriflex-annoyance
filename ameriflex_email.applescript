@@ -1,5 +1,5 @@
-(* Simple script for automating creation of an email I have to send far more
-often than I should.
+(* A simple script for automating the sending of my email responses
+to AmeriFlex's seemingly endless requests for documentation.
 
 USAGE
 =====
@@ -54,8 +54,8 @@ to getDocumentDate()
 end getDocumentDate
 
 -- returns user input from a dialog box with the supplied text 
-to getTextFromDialog(dialogText)
-	text returned of (display dialog dialogText default answer "" with title windowTitle)
+to getTextFromDialog(msg)
+	text returned of (display dialog msg default answer "" with title windowTitle)
 end getTextFromDialog
 
 -- get attachment from user input
