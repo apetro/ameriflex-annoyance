@@ -4,11 +4,7 @@ A simple AppleScript script for automating my seemingly endless number of docume
 
 Usage
 =====
-    $ osascript ameriflex_email.applescript document-id date
-
-### Example
-    $ osascript ameriflex_email.applescript 123-45-678 "May 13, 2014"
-
+Run the script and follow the onscreen prompts.
 
 Copyright
 =========
