@@ -3,7 +3,12 @@ to AmeriFlex's seemingly endless requests for documentation.
 
 USAGE
 =====
-Run the script and follow the onscreen prompts.
+1. Change Sheldon Cooper's contact info to yours
+2. Export script as a `.app`
+3. Launch the `.app`
+4. Enter document id, date, and PDF of substantiationcomposes at the prompts
+5. The app will compose and send the email without any further action from you (assumes you use Mail.app) 
+
 
 LICENSE (MIT LICENSE)
 =====================
