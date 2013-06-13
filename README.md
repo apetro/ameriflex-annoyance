@@ -9,7 +9,12 @@ OS X
 
 Usage
 =====
-Run the script and follow the onscreen prompts.
+1. Download the script
+1. Change Sheldon Cooper's contact info to yours
+1. Export script as a `.app`
+1. Launch the `.app`
+1. Enter document id, date, and PDF of substantiationcomposes at the prompts
+1. The script will compose and send the email without any further action from you (assumes you use Mail.app) 
 
 Copyright
 =========
