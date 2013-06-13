@@ -14,7 +14,7 @@ Usage
 1. Export script as a `.app`
 1. Launch the `.app`
 1. Enter document id, date, and PDF of substantiationcomposes at the prompts
-1. The script will compose and send the email without any further action from you (assumes you use Mail.app) 
+1. The app will compose and send the email without any further action from you (assumes you use Mail.app) 
 
 Copyright
 =========
